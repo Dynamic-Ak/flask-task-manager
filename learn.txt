@@ -1,0 +1,56 @@
+# 1. run app 
+A:\study\web development\Flask
+
+.\venv\Scripts\Activate  
+
+python app.py
+
+
+-----------------------
+
+# 2. creating Venv
+A:\study\web development\Flask
+
+python -m venv venv
+
+.\venv\Scripts\Activate  
+
+
+-----------------
+
+# 3. install requirements
+A:\study\web development\Flask
+
+.\venv\Scripts\Activate  
+
+pip install -r requirements.txt
+
+---------------------
+
+# 4. creating SQLite database as todo.db
+
+A:\study\web development\Flask
+
+.\venv\Scripts\Activate  
+
+python
+
+# these 3 python codelines
+from app import app, db  
+with app.app_context():
+    db.create_all()
+
+
+------------------------
+#5. creating requirements.txt
+
+A:\study\web development\Flask
+
+.\venv\Scripts\Activate  
+
+pip install gunicorn
+
+pip freeze > requirement.txt 
+
+--------------------------------
+

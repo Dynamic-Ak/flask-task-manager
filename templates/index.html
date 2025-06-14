@@ -1,0 +1,99 @@
+<!-- template inheritence whole html with navbar only template-->
+{% extends "base.html" %}
+<!-- template inheritence title-->
+{% block title %}Home{% endblock title %}
+{% block body %}
+
+
+
+    <!--     container form -->
+    <div class="container my-3">
+      <h1 class="display-4">Welcome to my TODO app</h1>
+      <h2 class="mt-4">Add a Todo</h2>
+      <form action="/" method="POST">
+        <div class="form-group">
+          <label for="title">TODO title</label>
+          <input 
+            type="text"
+            class="form-control"
+            name="title"
+            id="title"
+            aria-describedby="emailHelp"
+            placeholder="Enter TODO title"
+          />
+          <small id="titleHelp" class="form-text text-muted"
+            >write your short title.</small
+          >
+        </div>
+        <div class="form-group">
+          <label for="desc">Describe</label>
+          <textarea name="description" class="form-control" placeholder="Describe your TODO" rows="3"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+    <!--     container database table -->
+    <div class="container mt-5">
+      <h2>Todo list</h2>
+      <table class="table">
+
+          <!-- jinja2 -->
+          {% if allTodo|length == 0 %} <!-- jinja2 checking if allTodo is empty -->
+          <div class="alert alert-dark" role="alert">
+          No Todos Found! Please add a Todo.
+          </div> 
+          
+          
+          {% else %} <!-- jinja2 else -->
+          <thead>
+          <tr>
+            <th scope="col">SNo</th>
+            <th scope="col">Title</th>
+            <th scope="col">Description</th>
+            <th scope="col">Time stamp</th>
+            <th scope="col">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for todo in allTodo %} <!-- jinja2 -->
+          <tr>
+            <th scope="row">{{loop.index}}</th> <!-- jinja2 using loop.index for sno. -->
+            <td>{{todo.title}}</td>
+            <td>{{ todo.description[:30] }}{% if todo.description|length > 30 %}...{% endif %}</td>
+
+<!--             <td>{{ todo.description | replace('\n', '<br>') | safe }}</td>  jinja2 using replace to replace \n with <br> for multiline description -->
+          <td>{{todo.date_created.strftime('%d %B %Y, %I:%M %p') }}</td>
+            <td>
+              <a href="/delete/{{todo.SNo}}" <button type="button" class="btn btn-danger btn-sm mx-1">Delete</button>
+              <a href="/update/{{todo.SNo}}" <button type="button" class="btn btn-outline-success btn-sm mx-1">Update</button>
+              <a href="/view/{{todo.SNo}}" <button type="button" class="btn btn-info btn-sm mx-1">View</button>
+              </td>
+          </tr>
+          {% endfor %} <!-- jinja2 end for -->
+          </tbody>
+
+      </table>
+
+          {% endif %} <!-- jinja2 end if -->
+
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+
+{% endblock body%}

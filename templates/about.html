@@ -1,0 +1,98 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='icon.png') }}">
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+
+    <title> TODO</title>
+  </head>
+  <body>
+    <!--     navigation bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="/">TODO</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="/about"
+              >About <span class="sr-only">(current)</span></a
+            >
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+
+
+<div class="container 5">
+  <h1 class="text-center mb-4">🧾 About This TODO App</h1>
+
+<div class="p-4 mb-4 border border-primary rounded bg-light">
+  <h3 class="text-primary">🔄 How to Use</h3>
+  <ul>
+    <li><strong>Add a Todo:</strong> Enter a short title and description, then click <b>Submit</b>.</li>
+    <li><strong>View Your Todos:</strong> Tasks appear below the form, sorted by time.</li>
+    <li><strong>Search by Title:</strong> Use the search bar to quickly find tasks by title keywords.</li>
+    <li><strong>View Details:</strong> Click the <b>View</b> button to see the full description and created time.</li>
+    <li><strong>Update or Delete:</strong> Use the green <b>Update</b> or red <b>Delete</b> buttons to manage tasks.</li>
+  </ul>
+</div>
+
+
+<div class="p-4 mb-4 border border-success rounded bg-white">
+  <h3 class="text-success">👨‍💻 Creator</h3>
+  <p>
+    This app was created by 
+    <strong>
+      <a href="https://docs.google.com/document/d/1gQnsPRO7bPhyuGm6f_z7HSW8FsTLrq_kZ79r2_TxIc4/edit?usp=sharing" 
+         target="_blank" 
+         rel="noopener noreferrer" 
+         class="text-decoration-none text-dark">
+        Abhishek Kumar
+      </a>
+    </strong>, a passionate developer on a mission to master full-stack web development.
+  </p>
+</div>
+
+  <div class="p-4 mb-4 border border-warning rounded bg-light">
+    <h3 class="text-warning">⚙️ Tech Stack</h3>
+    <ul>
+      <li><strong>Backend:</strong> Flask, SQLAlchemy </li>
+      <li><strong>Frontend:</strong> HTML, CSS, Bootstrap, Jinja2</li>
+      <li><strong>Database:</strong> Use SQLite locally, PostgreSQL on Render </li>
+    </ul>
+  </div>
+
+  <div class="p-4 mb-4 border border-danger rounded bg-white">
+    <h3 class="text-danger">💡 Purpose</h3>
+    <p>This TODO app was built as a learning project to apply CRUD operations and understand full-stack fundamentals. It's simple, clean, and helps users stay organized!</p>
+  </div>
+</div>
+  
+</body>
+</html>

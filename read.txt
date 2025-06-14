@@ -1,0 +1,6 @@
+#To run app in VScode terminal
+
+1.PS A:\study> cd "a:\study\web development\Flask"
+2.PS A:\study\web development\Flask> .\venv\Scripts\Activate
+3.(venv) PS A:\study\web development\Flask> python app.py
+
